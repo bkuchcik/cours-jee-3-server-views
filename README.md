@@ -5,14 +5,6 @@
 
 # Avertissement
 
-Sur les postes, il existe un problème lors du lancement du serveur via Intellij (les jsps sont mal detectés).
-Pour pouvoir lancer le projet, utilisez le terminal dans intellij (alt + F12) et passer la commande suivante :
-```bash
-./gradlew 'module':bootRun
-```
+Pour pouvoir lancer les jsps depuis le projet Kotlin avec Intellij, il y a une classe main en Java.
 
-Par exemple pour lancer le server view java :
-```bash
-./gradlew server-views-java:bootRun
-```
-
+Les emplacements des jsps ont changé, basez vous sur cet exemple du cours.
