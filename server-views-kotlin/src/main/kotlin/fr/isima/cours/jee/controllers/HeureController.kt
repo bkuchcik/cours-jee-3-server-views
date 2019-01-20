@@ -8,23 +8,24 @@ import org.springframework.web.servlet.ModelAndView
 
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.time.format.DateTimeFormatter.ofPattern
 
 @Controller
 @RequestMapping("/heure")
 class HeureController {
 
     @GetMapping("{version}")
-    fun heure(@PathVariable("version") version: String) =
-            DateTimeFormatter
-            .ofPattern(HH_MM_SS_LE_DD_MM_YYYY)
-            .format(LocalDateTime.now()).let { currentDateAsString ->
-        ModelAndView("heureCourante-$version", "currentDateAsString", currentDateAsString)
+    fun heure(@PathVariable("version") version: String): ModelAndView {
+        val currentDateAsString = DateTimeFormatter
+                .ofPattern(HH_MM_SS_LE_DD_MM_YYYY)
+                .format(LocalDateTime.now())
+        return ModelAndView("heureCourante-$version", "currentDateAsString", currentDateAsString)
     }
 
     @GetMapping
     fun heure(): ModelAndView = heure(version = "v5")
 
     companion object {
-        internal val HH_MM_SS_LE_DD_MM_YYYY = "HH:mm:ss 'le' dd/MM/yyyy"
+        internal const val HH_MM_SS_LE_DD_MM_YYYY = "HH:mm:ss 'le' dd/MM/yyyy"
     }
 }

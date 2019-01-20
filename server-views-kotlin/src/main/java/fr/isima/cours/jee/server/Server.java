@@ -5,6 +5,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.ComponentScan;
 
 
+/**
+ * To enable intellij compatibility I had to implement a main in java not in Kotlin
+ *
+ */
 @SpringBootApplication
 @ComponentScan("fr.isima")
 public class Server {
