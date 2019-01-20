@@ -1,4 +1,4 @@
-package fr.isima.cours.jee.server;
+package fr.isima.server;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
